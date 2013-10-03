@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {{ page.title }}
+    </title>
+    <link href='css/main.css' rel='stylesheet' type='text/css'>
+    <link href='css/syntax.css' rel='stylesheet' type='text/css'>
+    <meta charset='UTF-8'>
+  </head>
+  <body>
+    <div id='container'>
+      <div id='header'>
+        <div id='label'>
+          <h1>
+            <a class='biglink' href='/'>BioSSA</a>
+          </h1>
+        </div>
+        <div id='logo'>
+          <img alt='caterpillar' src='logo.png'>
+        </div>
+        <div class='clear'></div>
+      </div>
+      <div id='content'>
+        <div id='sidebar'>
+          <ul>
+            <li>
+              <a href='markdown.html'>Markdown example</a>
+            </li>
+            <li>
+              <a href='code.html'>Code example</a>
+            </li>
+            <li>
+              <a href='tex.html'>TeX example</a>
+            </li>
+          </ul>
+        </div>
+        <div id='topic'>
+          {{ content }}
+        </div>
+        <div class='clear'></div>
+      </div>
+      <div id='footer'>BioSSA team</div>
+      <div class='clear'></div>
+    </div>
+  </body>
+</html>
