@@ -1,5 +1,5 @@
 name: My very awesome blog
 markdown: redcarpet
 pygments: true
-permalink: /:title.html
+permalink: ./:title.html
 excerpt_separator: ""
