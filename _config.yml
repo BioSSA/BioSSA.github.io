@@ -1,5 +1,9 @@
 name: My very awesome blog
 markdown: redcarpet
 pygments: true
-permalink: ./:title.html
+permalink: /:title.html
+baseurl: /jekyll-test
 excerpt_separator: ""
+redcarpet:
+    extensions: ["xhtml"]
+exclude: ["run.sh", "haml"]
