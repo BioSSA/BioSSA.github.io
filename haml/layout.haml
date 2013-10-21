@@ -4,27 +4,26 @@
     %title
       :escaped
         {{ page.title }}
-    %link{ :rel => 'stylesheet', :type => 'text/css', :href => 'css/main.css'}
-    %link{ :rel => 'stylesheet', :type => 'text/css', :href => 'css/syntax.css'}
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => '{{ site.baseurl}}/css/main.css'}
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => '{{ site.baseurl}}/css/syntax.css'}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   %body
     #container
       #header
         #label
-          %h1
-            %a{ :href => ".", :class => "biglink"} BioSSA
+          %a{ :href => "{{ site.baseurl}}/", :class => "biglink"} BioSSA — Tool For Doing Something
         #logo
-          %img(src = 'logo.png' alt = "caterpillar")
+          %img{ :src => '{{ site.baseurl}}/images/logo.png', :alt => "caterpillar"}
         .clear
       #content
         #sidebar
           %ul
             %li
-              %a{ :href => "markdown.html"}Markdown example
+              %a{ :href => "{{ site.baseurl}}/markdown.html"}Markdown example
             %li
-              %a{ :href => "code.html"}Code example
+              %a{ :href => "{{ site.baseurl}}/code.html"}Code example
             %li
-              %a{ :href => "tex.html"}TeX example
+              %a{ :href => "{{ site.baseurl}}/tex.html"}TeX example
         #topic
           = '{{ content }}'
         .clear
