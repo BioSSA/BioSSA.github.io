@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 %html{ :xmlns => 'http://www.w3.org/1999/xhtml'}
   %head
     %title
@@ -12,13 +12,21 @@
     #container
       #header
         #label
-          %a{ :href => "{{ site.baseurl}}/", :class => "biglink"} BioSSA — Tool For Doing Something
+          %a{ :href => "{{ site.baseurl}}/", :class => "biglink"} BioSSA — Tool For Analysis of Gene Expression
         #logo
           %img{ :src => '{{ site.baseurl}}/images/logo.png', :alt => "caterpillar"}
         .clear
       #content
         #sidebar
           %ul
+            %li
+              %a{ :href => "{{ site.baseurl}}/main.html"}About bioSSA package
+            %li
+              %a{ :href => "{{ site.baseurl}}/example.html"}Example of analysis of gene expression
+            %li
+              %a{ :href => "{{ site.baseurl}}/theory.html"}Brief review of theory 
+            %li
+              %a{ :href => "{{ site.baseurl}}/about.html"}About bioSSA team
             %li
               %a{ :href => "{{ site.baseurl}}/markdown.html"}Markdown example
             %li
