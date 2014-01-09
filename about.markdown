@@ -1,28 +1,16 @@
-﻿---
+---
 layout: layout
-title: "About BioSSA team"
+title: "About bioSSA team"
 categories: examples
 permalink: about.html
 ---
 
-#  Очень большой заголовок
-## Заголовок поменьше
-Lorem ipsum *dolor* sit amet, **consectetur** adipisicing elit, sed do _eiusmod_ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#  BioSSA team
 
-* Grab some beers
-- Even more beers
-- ???
-- profit!
+1. Alexander Spirov
+1. Nina Golyandina
+1. Alex Shlemov
+1. Anton Korobeynikov
+1. Nikita Zvonarev
 
 
-1. One rabbit
-2. Two rabbits
-3. **A lot of rabbits**
-
-#  Следующий заголовок
-[Google]( http://google.ru " Cсылка на Google")   
-перенос строки
-- - -
-
-#  Картинка
-![Котик](cat.gif)

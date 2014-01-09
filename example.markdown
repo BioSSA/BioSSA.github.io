@@ -5,24 +5,24 @@ categories: examples
 permalink: example.html
 ---
 
-#  Очень большой заголовок
-## Заголовок поменьше
-Lorem ipsum *dolor* sit amet, **consectetur** adipisicing elit, sed do _eiusmod_ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#  Example of BioSSA application
 
-* Grab some beers
-- Even more beers
-- ???
-- profit!
+{% highlight r %}
+
+  bss <- BioSSA(biossa.formula, data = emb.raw,
+                L = L,
+                step = 0.5,
+                xlim = xlim,
+                ylim = ylim,
+                xperc = xperc,
+                yperc = yperc)
+
+#***w-correlations for identification
+  plot(plot(bss, type = "wcor", groups=as.list(1:30)))
+
+#***Reconstruction of elementary components
+  rec.elem <- reconstruct(bss, groups=as.list(1:6))
+  plot(plot(rec.elem))
 
 
-1. One rabbit
-2. Two rabbits
-3. **A lot of rabbits**
-
-#  Следующий заголовок
-[Google]( http://google.ru " Cсылка на Google")   
-перенос строки
-- - -
-
-#  Картинка
-![Котик](cat.gif)
+{% endhighlight %}

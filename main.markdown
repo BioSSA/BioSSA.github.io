@@ -1,28 +1,47 @@
 ---
-layout: layout
+layout: layout-tex
 title: "BioSSA"
 categories: examples
 permalink: main.html
 ---
-
-#  Очень большой заголовок
-## Заголовок поменьше
-Lorem ipsum *dolor* sit amet, **consectetur** adipisicing elit, sed do _eiusmod_ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-* Grab some beers
-- Even more beers
-- ???
-- profit!
+# Aim of the project
 
 
-1. One rabbit
-2. Two rabbits
-3. **A lot of rabbits**
+Aim of the project is to create the package, which is designed for analysis of 2D data or 3D surface irregular data in cylindrical projection. Interface of the package should be convenient for 
+processing of data of gene expression of drosophila fly.
 
-#  Следующий заголовок
-[Google]( http://google.ru " Cсылка на Google")   
-перенос строки
-- - -
+**Input data**: points $(x_i, y_i, f_i)$ given on a planar surface.
 
-#  Картинка
-![Котик](cat.gif)
+**Output**:  decomposition of data on trend (pattern) and noise, construction of the noise model.
+
+# Possibilities of the package
+
+1.	Loading the data from files given in the following formats
+(x,y, gene expression).
+2.	Decomposition of data
+	-	 Transformation of data to the scale 0-100% by AP and DV coordinates
+	-	Choice of rectangular area for analysis
+	-	Regularization of data (interpolation to regular grid), the step of the grid can be set.
+	-	Decomposition of regularized data by the 2D-SSA method
+	-	Interpolation of data to initial coordinates.
+3.	Checking the decomposition quality
+	- Profiles of patterns along AP or DV axis
+	- Profiles of noise along AP or DV axis
+4.	Analysis of residuals, model of residuals
+	-	Graphs of dependence of noise on patters, 
+	-	Estimation of noise model: additive, multiplicative or Poissonian model.
+5.	Pictures with the results of decomposition in 2D or 3D forms.
+
+# Implementation
+
+The package is implemented as an R-package [BioSSA](Rssa_0.10-2.zip)
+
+It essentially uses the  [Rssa]( http://http://cran.r-project.org/web/packages/Rssa/ "Cсылка на Rssa") package.  
+
+# Method
+
+Decomposition of the image into a sum of pattern and noise is fulfilled  by 2D Singular Spectrum Analysis. 
+
+#Support
+
+This work is supported by the NG13-083 grant of Dynasty Foundation.
