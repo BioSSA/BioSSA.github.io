@@ -1,4 +1,4 @@
-﻿---
+---
 layout: layout
 title: "BioSSA"
 categories: examples

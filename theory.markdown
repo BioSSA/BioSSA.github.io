@@ -1,4 +1,4 @@
-﻿---
+---
 layout: layout
 title: "Brief review of theory"
 categories: examples
