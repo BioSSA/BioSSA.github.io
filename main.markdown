@@ -10,7 +10,7 @@ permalink: main.html
 Aim of the project is to create the package, which is designed for analysis of 2D data or 3D surface irregular data in cylindrical projection. Interface of the package should be convenient for 
 processing of data of gene expression of drosophila fly.
 
-**Input data**: <div> points \((x_i, y_i, f_i)\) given on a planar surface.</div>
+**Input data**: points `\((x_i, y_i, f_i)\)` given on a planar surface.
 
 **Output**:  decomposition of data on trend (pattern) and noise, construction of the noise model.
 

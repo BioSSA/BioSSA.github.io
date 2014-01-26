@@ -6,7 +6,13 @@
     </title>
     <link href='{{ site.baseurl}}/css/main.css' rel='stylesheet' type='text/css' />
     <link href='{{ site.baseurl}}/css/syntax.css' rel='stylesheet' type='text/css' />
-    <script src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' type='text/javascript'></script>
+    <script src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' type='text/javascript'>
+      MathJax.Hub.Config({
+      tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+      });
+    </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>

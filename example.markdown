@@ -9,19 +9,16 @@ permalink: example.html
 
 ## Cylindric Shaped 2D-SSA
 
+
 Let us consider the data for expression of gene activity measured on the embryo of the drosophila (fruit fly).
 The form of the embryo is similar to ellipsoid and therefore the cylindrical projection is adequate for
 a middle part of the embryo. The technique of SSA analysis of such kind of 2D data by planar non-shaped 2D-SSA
 was developed in Golyandina et al (2012) and Holloway et al (2011).
-After projection, the initial data given on 3D embryo surfaces are represented in the form <div>\((x_i, y_i, f_i)\), where \((x_i, y_i)\) are coordinates of nuclei centers in
-the cylindric
-projection transformed to a planar rectangle,
-\(f_i\) are the expression values. The aim of the analysis is to decompose the data into a sum of
+After projection, the initial data given on 3D embryo surfaces are represented in the form `\((x_i, y_i, f_i)\)` where `\((x_i, y_i)\)` are coordinates of nuclei centers in the cylindric projection transformed to a planar rectangle, `\(f_i\)` are the expression values. The aim of the analysis is to decompose the data into a sum of
 pattern and noise and then measure the signal/noise ratio. The data are cropped and
 then are interpolated to a regular grid; therefore, we obtain a digital image, which
 can be processed by 2D-SSA. The values of smoothed expression are interpolated backward onto
 nuclei centers.
-</div>
 
 Here we demonstrate that the developed circular version of 2D-SSA can perform smoothing without
 artificial transformation of a cylinder to the rectangle. Thus the result of processing
