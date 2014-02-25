@@ -1,8 +1,9 @@
 ---
-layout: layout-tex
+layout: layout-bootstrap-tmp
 title: "Example"
 categories: examples
 permalink: example.html
+tags: mainmenu
 ---
 
 #  Example of BioSSA application

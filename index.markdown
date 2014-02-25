@@ -1,8 +1,9 @@
 ---
-layout: layout-tex
-title: "BioSSA"
+layout: layout-bootstrap-tmp
+title: "About Package"
 categories: examples
-permalink: main.html
+permalink: index.html
+tags: mainpage
 ---
 # Aim of the project
 

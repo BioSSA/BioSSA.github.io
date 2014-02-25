@@ -1,8 +1,9 @@
 ---
-layout: layout
+layout: layout-bootstrap-tmp
 title: "Brief review of theory"
 categories: examples
 permalink: theory.html
+tags: mainmenu
 ---
 
 #  Singular Spectrum Analysis

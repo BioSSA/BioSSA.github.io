@@ -1,8 +1,9 @@
 ---
-layout: layout
+layout: layout-bootstrap-tmp
 title: "Code fragments"
 categories: examples
 permalink: codefrag.html
+tags: mainmenu
 ---
 
 #  Code fragments

@@ -1,8 +1,9 @@
 ---
-layout: layout
-title: "About bioSSA team"
+layout: layout-bootstrap-tmp
+title: "BioSSA Team"
 categories: examples
 permalink: about.html
+tags: mainmenu
 ---
 
 #  BioSSA team
