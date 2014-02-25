@@ -55,14 +55,15 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <!--<li class="active"><a href="#">Link</a></li>-->
-              {% for lipage in site.pages | sort %}
+              {% assign sortedpages = site.pages | sort:"title" %}
+              {% for lipage in sortedpages %}
                 {% if lipage.tags contains "mainpage" %}
                   {% if page.url == lipage.url %}<li class="active">{% else %}<li>{% endif %}
                   <a href="{{ site.baseurl}}{{ lipage.url }}">{{ lipage.title }}</a></li>
                 {% endif %}
               {% endfor %}
 
-              {% for lipage in site.pages | sort %}
+              {% for lipage in sortedpages %}
                 {% if lipage.tags contains "mainmenu" %}
                   {% if page.url == lipage.url %}<li class="active">{% else %}<li>{% endif %}
                   <a href="{{ site.baseurl}}{{ lipage.url }}">{{ lipage.title }}</a></li>
