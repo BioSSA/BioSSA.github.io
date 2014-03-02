@@ -1,8 +1,8 @@
 ---
 layout: layout-bootstrap-tmp
-title: "Example"
+title: "Example of application"
 categories: examples
-permalink: example.html
+permalink: example_application.html
 tags: mainmenu
 ---
 
@@ -26,17 +26,17 @@ artificial transformation of a cylinder to the rectangle. Thus the result of pro
 does not depend on the technique of this transformation and has no extra edge effects. We consider the cylindrical topology.
 
 The data are downloaded from the BDTNP archive,
-the file ``v5_s11643-28no06-04.pca'', ``even skipped''.
+the file "v5_s11643-28no06-04.pca", "even skipped".
 
 The data on the surface of embryo are given in 3D coordinates, therefore we calculated cylindric coordinates
 by finding the principal axis of the data. The interpolation is performed with the step 0.5% and the
 middle part from 20 to 80% of the embryo lengths were processed.
 
-The result of decomposition (the factor vectors from the $12$ leading eigentriples) is depicted in the figure below.
+The result of decomposition (the factor vectors from the `\(12\)` leading eigentriples) is depicted in the figure below.
 
-![Factor vectors](circular_factor.png)
+![Factor vectors](circular_factor.png) 
 
 ![Reconstruction and residuals](circular_reconstructed.png)
 
-The components 1--6 grouped together provide an adequate smoothing; the residual oscillates around zero.
+The components 1-6 grouped together provide an adequate smoothing; the residual oscillates around zero.
 Note that the bottom and top edges are coincide, that is, there is no edge effect.

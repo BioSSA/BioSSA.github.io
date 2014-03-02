@@ -1,20 +1,23 @@
 ---
 layout: layout-bootstrap-tmp
-title: "About Package"
+title: "About package"
 categories: examples
 permalink: index.html
 tags: mainpage
 ---
-# Aim of the project
+<div class="jumbotron">
+  <div class="container">
+<h1>BioSSA - Tool For Analysis of Gene Expression</h1>
 
-
-Aim of the project is to create the package, which is designed for analysis of 2D data or 3D surface irregular data in cylindrical projection. Interface of the package should be convenient for 
-processing of data of gene expression of drosophila fly.
-
-**Input data**: points `\((x_i, y_i, f_i)\)` given on a planar surface.
-
-**Output**:  decomposition of data on trend (pattern) and noise, construction of the noise model.
-
+<p>Aim of the project is to create the package, which is designed for analysis of 2D data or 3D surface irregular data in cylindrical projection. Interface of the package should be convenient for 
+processing of data of gene expression of drosophila fly.</p>
+<p><ul>
+<li><b>Input data:</b> points \((x_i, y_i, f_i)\) given on a planar surface.</li>
+<li><b>Output:</b>  decomposition of data on trend (pattern) and noise, construction of the noise model.</li>
+</ul></p>
+<p><a href="https://github.com/asl/BioSSA" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-save"></span>Watch GitHub Repository</a></p>
+</div>
+</div>
 # Possibilities of the package
 
 1.	Loading the data from files given in the following formats

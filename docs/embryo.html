@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Create a new 'embryo' object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for embryo {BioSSA}"><tr><td>embryo {BioSSA}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Create a new &lsquo;embryo&rsquo; object</h2>
+
+<h3>Description</h3>
+
+<p>Creates a new object of class &lsquo;embrio2d&rsquo; or &lsquo;embrio3d&rsquo; correspondingly,
+input and output data for <code>BioSSA</code> procedure.
+</p>
+<p>ASH: Probably, we should join these methods into one and determine dimension by formula length.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'formula'
+embryo2d(x, data = NULL, topology = c(Inf, Inf), ...)
+## S3 method for class 'formula'
+embryo3d(x, data = NULL, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>formula which describes 2d or 3d spatial embryo data</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>further arguments passed to <code><a href="../../stats/html/model.frame.html">model.frame</a></code> function</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>a data frame (or more precisely, anything that is a valid <code>envir</code> argument in <code>eval</code>,
+e.g., a list or an environment) containing values for any variables in the formula.
+If not found in <code>data</code>, or if <code>data</code> is unspecified, the variables are looked for
+in the environment of the formula</p>
+</td></tr>
+<tr valign="top"><td><code>topology</code></td>
+<td>
+<p>field topology, a vector of two positive (may be <code>Inf</code>) values.
+<code>Inf</code> means no cycling by corresponding coordinate and finite number denotes circle length</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p><code>topology</code> argument is used if 2d data given by cylindrical sweeping of 3d data.
+</p>
+
+
+<h3>Value</h3>
+
+<p>Object of class &lsquo;embryo2d&rsquo; or &lsquo;embryo3d&rsquo; correspondingly.
+</p>
+<p>&lsquo;embrio2d&rsquo; is list with following fields: two coordinates 'x2d', 'y2d' and gene activity 'value'.
+List has 'topology' attribute, which stores <code>topology</code>.
+If object returned from \сodereconstruct or <code>residuals</code> methods of &lsquo;BioSSA2d&rsquo; class,
+it also contains field 'field', which stores interpolated values and interpolation grid parameters.
+</p>
+<p>&lsquo;embrio3d&rsquo; is list with following fields: three coordinates 'x3d', 'y3d', 'z3d' and gene activity 'value'.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+file &lt;- system.file("extdata/data", "ab16.txt", package = "BioSSA")
+df &lt;- read.emb.data(file)
+
+emb2d &lt;- embryo2d(cad ~ AP + DV, data = df)
+plot(emb2d, "nuclei-2d")
+</pre>
+
+<hr><div align="center">[Package <em>BioSSA</em> version 0.0.4 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Plot 'embryo3d' object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for plot.embryo3d {BioSSA}"><tr><td>plot.embryo3d {BioSSA}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Plot &lsquo;embryo3d&rsquo; object</h2>
+
+<h3>Description</h3>
+
+<p><code>plot</code> method for class &lsquo;embryo3d&rsquo;
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'embryo3d'
+plot(x, type = c("hull", "nuclei"), ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>object of class &lsquo;embryo3d&rsquo;</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>plot type</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>further arguments passed to plot functions</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>For <code>type = 'hull'</code>, the convex hull of nuclei is depicted,
+the color is determined by intensities. At edges the color is obtained by linear interpolation.
+</p>
+<p>For <code>type = 'nuclei'</code> the nuclei are deposted as color spheres.
+Color is determined by intensities.
+<STRONG>Warning:</STRONG> Drawing can take a long time if the number of nuclei is large.
+</p>
+<p>Parameter <code>col</code> is vector of two colors corresponding to minimal and maximal intensivities.
+Default value is <code>c('blue', 'red')</code>.
+</p>
+<p>Other parameters are passed to functions
+<code><a href="../../rgl/html/shade3d.html">shade3d</a></code> and <code><a href="../../rgl/html/plot3d.html">plot3d</a></code>
+correspondingly.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+file &lt;- system.file("extdata/pce", "v5_s12166-23au07-22.pce", package = "BioSSA")
+pce &lt;- read.pce.gene(file, gene = "eve")
+plot(pce, type = "hull")
+plot(pce, type = "nuclei")
+</pre>
+
+<hr><div align="center">[Package <em>BioSSA</em> version 0.0.4 <a href="00Index.html">Index</a>]</div>
+</body></html>

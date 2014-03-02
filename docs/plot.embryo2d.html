@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Plot 'embryo2d' object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for plot.embryo2d {BioSSA}"><tr><td>plot.embryo2d {BioSSA}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Plot &lsquo;embryo2d&rsquo; object</h2>
+
+<h3>Description</h3>
+
+<p>The function plots &lsquo;embryo2d&rsquo; object in different ways:
+(1) 2d color levelplot of intesities,
+(2) 3d plot of intensities and
+(3) 1d plots of sections along coordinate (AP or DV) directions.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'embryo2d'
+plot(x, type = c("nuclei-2d", "field-2d",
+                                    "field-section", "nuclei-section",
+                                    "field-3d", "nuclei-3d"),
+                                  ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>object of class &lsquo;embryo2d&rsquo;</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>plot type (see Details)</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>further arguments passed to plotting function</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>A lot of drawing methods, 1d, 2d, 3d, for regular grid and for orginal nuclear centers.
+Type variants:
+</p>
+
+<dl>
+<dt>nuclei-2d</dt><dd><p>is 2d nuclei plot. One point for one nucleus. Also one can pass the following arguments:
+<code>voronoi</code> &mdash; logical whether plot Voronoi diagram for nuclei, 'TRUE' by default;
+<code>col</code> &mdash; argument for <code><a href="../../grDevices/html/colorRampPalette.html">colorRampPalette</a></code>, this pallete used
+for Voronoi diagram, color intensity corresponds to nuclei intensity value,
+greyscale pallete by default</p>
+</dd>
+<dt>field-2d</dt><dd><p>is Lattice levelplot for intensity regularization. Argument <code>col</code> defines color palette
+(see previous item)</p>
+</dd>
+<dt>field-section</dt><dd><p>is Lattice xyplot for of section for intensities in regular grid. Additional arguments:
+<code>at</code>, <code>units</code> &mdash; units for <code>at</code> ('percent' or 'original'),
+<code>coord</code> &mdash; 'x' or 'y', 'y' by default</p>
+</dd>
+<dt>nuclei-section</dt><dd><p>is Lattice xyplot of section for intensities in nucleus. Additional arguments:
+<code>at</code>, <code>units</code>, <code>coord</code> &mdash; see previous item, <code>tolerance</code> &mdash;
+is the half-width of the strip around the section position</p>
+</dd>
+<dt>field-3d</dt><dd><p>is 3d rgl plot, nuclei are depicted by colored spheres,
+color intensity corresponds to nuclei intensity value. Additional argument <code>col</code> &mdash;
+character vector of two values, denotes colors for the lowest and the highest intensities correspondingly</p>
+</dd>
+<dt>nuclei-3d</dt><dd><p>3d rgl surface plot, values in regular grid are depicted,
+color intensity corresponds to nuclei intensity value. Additional argument <code>col</code> &mdash; see previous item</p>
+</dd>
+</dl>
+
+<p>Other parameters are passed to plot functions.
+Остальные параметры передаются дальше в функции
+Тут у нас есть маленькое ТУДУ для меня. Регуляризация может отсутсвовать в эмбрионе,
+одни голые ядра (если эмбрион не был обработан BioSSA). Поэтому сейчас некоторые рисовалки не работают
+</p>
+<p>Не очень понятно, как с этим быть, параметры регулярицации задаются в BioSSA. Либо надо выносить регуляризацию
+из BioSSA, либо надо отслеживать случай нерегуляризованного эмбриона
+</p>
+
+
+<h3>Value</h3>
+
+<p>&lsquo;trellis&rsquo; object (see <a href="../../lattice/html/lattice%2dpackage.html">lattice</a>) for 2d plots,
+a vector of object IDs for 3d plots.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xlim &lt;- c(22, 88)
+ylim &lt;- c(32, 68)
+L &lt;- c(15, 15)
+good &lt;- 3
+
+file &lt;- system.file("extdata/data", "ab16.txt", package = "BioSSA")
+df &lt;- read.emb.data(file)
+
+bss &lt;- BioSSA(cad ~ AP + DV,  data = df,
+              L = L,
+              step = 0.5,
+              xlim = xlim, ylim = ylim)
+
+
+# Reconstruction of elementary components
+rec.elem &lt;- reconstruct(bss, groups = 1:6)
+plot(plot(rec.elem))
+
+# Sections for testing the reconstruction quality
+rec &lt;- reconstruct(bss, groups = list(good = 1:good))
+p.ny &lt;- plot(attr(rec, "series"), type = "nuclei-section", at = 50, coord = "y", tol = 5)
+p.fy2 &lt;- plot(rec$good, type = "field-section", at = 50, coord = "y")
+
+# y-sections
+pls &lt;- list()
+pls[[1]] &lt;- p.ny + p.fy2
+pls[[2]] &lt;- plot(residuals(bss, 1:good), type = "nuclei-section",
+                 at = 50, coord = "y", tol = 5,
+                 ref = TRUE, col = "blue")
+
+print(pls[[1]], split = c(1, 1, 2, 1), more = TRUE)
+print(pls[[2]], split = c(2, 1, 2, 1))
+
+
+# Dependence of noise on trend
+plot(bss, type = "residuals", model = "multiplicative", groups = 1:good)
+
+# 3d-figure of reconstruction
+plot(rec$good, type = "nuclei-3d", col = c("blue", "red"))
+
+# 2d-figures with triangulation
+plot(rec$good, type = "nuclei-2d")
+</pre>
+
+<hr><div align="center">[Package <em>BioSSA</em> version 0.0.4 <a href="00Index.html">Index</a>]</div>
+</body></html>

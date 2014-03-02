@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Construct a new BioSSA decomposition object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for BioSSA {BioSSA}"><tr><td>BioSSA {BioSSA}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Construct a new BioSSA decomposition object</h2>
+
+<h3>Description</h3>
+
+<p>Construct a new BioSSA decomposition object from passed embryo object or formula.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'formula'
+BioSSA(x, data = NULL, ...)
+## S3 method for class 'embryo2d'
+BioSSA(x,
+       ...,
+       step = 0.5,
+       L = c(50, 50),
+       xlim = c(-Inf, Inf),
+       ylim = c(-Inf, Inf),
+       xperc = c(0, 100),
+       yperc = c(0, 100),
+       units = c("percent", "original"))
+## S3 method for class 'embryo3d'
+BioSSA(x, ..., sweep = sweep.function)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>formula or object of class &lsquo;embryo2d&rsquo; or &lsquo;embryo3d&rsquo;</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>further arguments passed to <code>ssa</code> with parameter
+<code>kind = '2d-ssa'</code>; <code>ssa</code> is the main function of the &lsquo;Rssa&rsquo; package,
+which performs Singular Spectum Analysis</p>
+</td></tr>
+<tr valign="top"><td><code>units</code></td>
+<td>
+<p>units for <code>L</code>, <code>step</code>, <code>xlim</code> and <code>ylim</code> arguments. &lsquo;percent&rsquo;
+means percent of whole embryo length</p>
+</td></tr>
+<tr valign="top"><td><code>L</code></td>
+<td>
+<p>vector of two elements, window length (in &lsquo;units&rsquo;)</p>
+</td></tr>
+<tr valign="top"><td><code>step</code></td>
+<td>
+<p>grid step for interpolation (in &lsquo;units&rsquo;)</p>
+</td></tr>
+<tr valign="top"><td><code>xlim, ylim</code></td>
+<td>
+<p>numeric vectors of two elements, cutoff bounds by AP and DV axes (in &lsquo;units&rsquo;)</p>
+</td></tr>
+<tr valign="top"><td><code>xperc, yperc</code></td>
+<td>
+<p>numeric vectors of two elements,
+denote the size (width and height) of presented embryo part in percent
+(usefull if data present only a part of the whole embryo)</p>
+</td></tr>
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>a data frame (or more precisely, anything that is a valid <code>envir</code> argument in <code>eval</code>,
+e.g., a list or an environment) containing values for any variables in the formula.
+If not found in <code>data</code>, or if <code>data</code> is unspecified, the variables are looked for
+in the environment of the formula</p>
+</td></tr>
+<tr valign="top"><td><code>sweep</code></td>
+<td>
+<p>sweeping function for planarize 3d embryo to 2d ones.
+Just now is only default function (<code>sweep.function</code>) is supported, which provides
+cylindrical sweeping (MB, projection; please, somebody, fix my lexics...). Interface for
+user-specified planarization functions in developing now (In future, it will be function which
+takes object of class &lsquo;embryo3d&rsquo; and returns list of &lsquo;embryo2d&rsquo; objects)</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>For the &lsquo;formula&rsquo;: formula is evaluated with using <code>data</code>.
+The specified data are transformed to &lsquo;embryo2d&rsquo; or &lsquo;embryo3d&rsquo; object (it's determined by formula length).
+the obtained object is passed (along with arguments specified by ...) to the <code>BioSSA</code> method for
+corresponding class.
+</p>
+<p>For the &lsquo;embryo3d&rsquo; object: 2d projection is performed (using <code>sweep</code> function, topology is kept,
+that is, along Y (DV) axis the circulat topology is considered. Thus, &lsquo;embtyo3d&rsquo; contains
+&lsquo;embryo2d&rsquo; object. Then the <code>BioSSA</code> method for &lsquo;embryo2d&rsquo; class is called.
+</p>
+<p>For the &lsquo;embryo2d&rsquo; object: the linear interpolation (see <code><a href="../../akima/html/interp.html">interp</a></code>)
+is performed to the regular grid with step <code>step</code>.
+For regular data, the conventional 2D-SSA procedure (<code>ssa</code> from &lsquo;Rssa&rsquo;) is called.
+</p>
+
+
+<h3>Value</h3>
+
+<p>&lsquo;embryo2d&rsquo; or &lsquo;embryo3d&rsquo; object, according to the type of <code>x</code>,
+stores the result of decomposition of the trajectory matrix.
+To obtain the decomposition of the data, <code><a href="reconstruct.html">reconstruct</a></code> should be called.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><a href="BioSSA%2dclass.html">BioSSA-class</a>,
+<code><a href="reconstruct.html">reconstruct</a></code>,
+<code><a href="../../Rssa/html/ssa.html">ssa</a></code>,
+<code><a href="../../Rssa/html/plot.ssa.html">plot.ssa</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+xlim &lt;- c(22, 88)
+ylim &lt;- c(32, 68)
+L &lt;- c(15, 15)
+
+file &lt;- system.file("extdata/data", "ab16.txt", package = "BioSSA")
+df &lt;- read.emb.data(file)
+
+bss &lt;- BioSSA(cad ~ AP + DV, data = df, ylim = ylim, xlim = xlim, L = L)
+summary(bss)
+plot(bss)
+plot(bss, type = "ssa-vectors")
+plot(bss, type = "ssa-vectors", vectors = "factor")
+</pre>
+
+<hr><div align="center">[Package <em>BioSSA</em> version 0.0.4 <a href="00Index.html">Index</a>]</div>
+</body></html>

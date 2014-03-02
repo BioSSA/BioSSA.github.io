@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Read gene data from PCE file</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for pce {BioSSA}"><tr><td>pce {BioSSA}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Read gene data from PCE file</h2>
+
+<h3>Description</h3>
+
+<p>Read gene expression data from PointCloud File Format
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+read.pce(file)
+read.pce.gene(file, gene, ...)
+extract.gene.pce(pce, gene, measurement = c("default", "apical", "basal", "nuclear", "cellular"))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>charater, PCE file name</p>
+</td></tr>
+<tr valign="top"><td><code>gene</code></td>
+<td>
+<p>character, gene name for extraction</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>further arguments passed to <code>extract.gene.pce</code> (e.g. <code>measurement</code>)</p>
+</td></tr>
+<tr valign="top"><td><code>measurement</code></td>
+<td>
+<p>measurement kind</p>
+</td></tr>
+<tr valign="top"><td><code>pce</code></td>
+<td>
+<p>data frame, parsed PCE content</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Some details?..
+</p>
+
+
+<h3>Value</h3>
+
+<p>Object of class &lsquo;embryo3d&rsquo; for <code>read.pce.gene</code> and <code>extract.gene.pce</code>.
+Data frame for <code>read.pce</code>.
+</p>
+
+
+<h3>References</h3>
+
+<p>Format description: <a href="http://bdtnp.lbl.gov/Fly-Net/bioimaging.jsp?w=pceFormat">http://bdtnp.lbl.gov/Fly-Net/bioimaging.jsp?w=pceFormat</a>
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="embryo3d.html">embryo3d</a></code>,
+<code><a href="plot.embryo3d.html">plot.embryo3d</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+file &lt;- system.file("extdata/pce", "v5_s12166-23au07-22.pce", package = "BioSSA")
+pce &lt;- read.pce.gene(file, gene = "eve")
+plot(pce, type = "hull")
+plot(pce, type = "nuclei")
+</pre>
+
+<hr><div align="center">[Package <em>BioSSA</em> version 0.0.4 <a href="00Index.html">Index</a>]</div>
+</body></html>
