@@ -8,12 +8,14 @@ tags: codeexample
 
 ## Example of usage of BioSSA & reconstruct functions
 
-- data is the collection of data as a data frame 
-- biossa.formula help to choose ; e.g., biossa.formula = mean ~ X + Y 
+- "read.emb.data" reads 2d data from file and return data frame
+- biossa.formula help to choose ; e.g., biossa.formula = mean ~ X + Y ???
+- "BioSSA" constructs a new BioSSA decomposition object from passed embryo object or formula
+- First argument of "BioSSA" is formula evaluated with using data
 - L is the window length
-- step is the step of interpolation
-- xlim and ylim are ???
-- xperc and yperc are ???
+- step is the grid step of interpolation
+- xlim and ylim are cutoff bounds by AP and DV axes
+- xperc and yperc denotes the size (width and height) of presented embryo part in percent
 
 {% highlight r %}
 
