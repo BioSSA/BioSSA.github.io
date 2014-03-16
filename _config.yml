@@ -1,8 +1,8 @@
-name: My very awesome blog
+name: BioSSA
 markdown: redcarpet
 pygments: true
 permalink: /:title
-baseurl: /jekyll-test
+baseurl: 
 excerpt_separator: ""
 redcarpet:
     extensions: ["xhtml"]
