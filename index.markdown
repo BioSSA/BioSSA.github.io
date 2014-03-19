@@ -15,7 +15,7 @@ processing of data of gene expression of drosophila fly.</p>
 <li><b>Input data:</b> points \((x_i, y_i, f_i)\) given on a planar surface.</li>
 <li><b>Output:</b>  decomposition of data on trend (pattern) and noise, construction of the noise model.</li>
 </ul></p>
-<p><a href="https://github.com/asl/BioSSA" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-save"></span>Watch GitHub Repository</a></p>
+<p><a href="https://github.com/BioSSA/BioSSA" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-save"></span>Watch GitHub Repository</a></p>
 </div>
 </div>
 # Possibilities of the package
@@ -36,11 +36,21 @@ processing of data of gene expression of drosophila fly.</p>
 	-	Estimation of noise model: additive, multiplicative or Poissonian model.
 5.	Pictures with the results of decomposition in 2D or 3D forms.
 
-# Implementation
+# Installation
 
-The package is implemented as an R-package [BioSSA](BioSSA_0.0.1.zip)
+The package is implemented as an [R-package](http://www.r-project.org/ ).
 
-It essentially uses the  [Rssa]( http://cran.r-project.org/web/packages/Rssa/ "Cсылка на Rssa") package.  
+To install BioSSA in Linux/MacOS, run following code (in R):
+
+{% highlight r %}
+install.packages("devtools")
+library(devtools)
+install_github("BioSSA/BioSSA")
+{% endhighlight %}
+
+Binary build for Windows could be found [here]( https://github.com/BioSSA/BioSSA/biossa_01.zip "BioSSA Link").
+
+It essentially uses the [Rssa]( http://cran.r-project.org/web/packages/Rssa/ "Rssa link") package. You can also watch [Rssa GitHub repository]( https://github.com/asl/rssa/ "Rssa GitHub link").
 
 # Method
 
