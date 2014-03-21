@@ -46,7 +46,7 @@ To install latest version of BioSSA automatically (Windows and Linux now support
 source("http://BioSSA.github.io/BioSSA.inst.R")
 {% endhighlight %}
 
-Binary build for Windows could be found [here]( https://github.com/BioSSA/BioSSA/biossa_01.zip "BioSSA Link").
+Latest binary build for Windows could be found [here]( http://BioSSA.github.io/BioSSA_0.1.zip "BioSSA Windows binary build").
 
 It essentially uses the [Rssa]( http://cran.r-project.org/web/packages/Rssa/ "Rssa link") package. You can also watch [Rssa GitHub repository]( https://github.com/asl/rssa/ "Rssa GitHub link").
 
