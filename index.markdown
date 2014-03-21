@@ -40,7 +40,7 @@ processing of data of gene expression of drosophila fly.</p>
 
 The package is implemented as an [R-package](http://www.r-project.org/ ).
 
-To install BioSSA automatically (Windows and Linux now supported), run following code (in R):
+To install latest version of BioSSA automatically (Windows and Linux now supported), run following code (in R):
 
 {% highlight r %}
 source("http://BioSSA.github.io/BioSSA.inst.R")
