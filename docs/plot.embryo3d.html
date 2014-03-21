@@ -2,6 +2,11 @@
 <html><head><title>R: Plot 'embryo3d' object</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
 <table width="100%" summary="page for plot.embryo3d {BioSSA}"><tr><td>plot.embryo3d {BioSSA}</td><td align="right">R Documentation</td></tr></table>
@@ -53,19 +58,21 @@ Color is determined by intensities.
 Default value is <code>c('blue', 'red')</code>.
 </p>
 <p>Other parameters are passed to functions
-<code><a href="../../rgl/html/shade3d.html">shade3d</a></code> and <code><a href="../../rgl/html/plot3d.html">plot3d</a></code>
+<code><a href="http://cran.r-project.org/web/packages/rgl/rgl.pdf">shade3d</a></code> and <code><a href="http://cran.r-project.org/web/packages/rgl/rgl.pdf">plot3d</a></code>
 correspondingly.
 </p>
 
 
 <h3>Examples</h3>
 
-<pre>
-file &lt;- system.file("extdata/pce", "v5_s12166-23au07-22.pce", package = "BioSSA")
-pce &lt;- read.pce.gene(file, gene = "eve")
-plot(pce, type = "hull")
-plot(pce, type = "nuclei")
-</pre>
+<pre><code class="r">
+file &lt;- system.file(&quot;extdata/pce&quot;, &quot;v5_s12166-23au07-22.pce&quot;, package = &quot;BioSSA&quot;)
+pce &lt;- read.pce.gene(file, gene = &quot;eve&quot;)
+plot(pce, type = &quot;hull&quot;)
+plot(pce, type = &quot;nuclei&quot;)
 
-<hr><div align="center">[Package <em>BioSSA</em> version 0.0.4 <a href="00Index.html">Index</a>]</div>
+</code></pre>
+
+
+<hr><div align="center">[Package <em>BioSSA</em> version 0.1 <a href="00Index.html">Index</a>]</div>
 </body></html>
