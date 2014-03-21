@@ -48,7 +48,16 @@ source("http://BioSSA.github.io/BioSSA.inst.R")
 
 Latest binary build for Windows could be found [here]( http://BioSSA.github.io/BioSSA_0.1.zip "BioSSA Windows binary build").
 
-It essentially uses the [Rssa]( http://cran.r-project.org/web/packages/Rssa/ "Rssa link") package. You can also watch [Rssa GitHub repository]( https://github.com/asl/rssa/ "Rssa GitHub link").
+It essentially uses the [Rssa]( http://cran.r-project.org/web/packages/Rssa/ "Rssa link") package.
+You can also watch [Rssa GitHub repository]( https://github.com/asl/rssa/ "Rssa GitHub link") or
+install package from GitHub directly (using Hadley's package [`devtools`]( http://cran.r-project.org/web/packages/devtools/index.html "devtools package CRAN page" ))
+by the following code:
+{% highlight r %}
+install.packages("devtools")
+library(devtools)
+install_github("BioSSA/BioSSA")
+{% endhighlight %}
+Be careful, `devtools` package has some additional dependences.
 
 # Method
 
