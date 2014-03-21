@@ -43,7 +43,7 @@ The package is implemented as an [R-package](http://www.r-project.org/ ).
 To install latest version of BioSSA automatically (Windows and Linux now supported), run following code (in R):
 
 {% highlight r %}
-source("http://BioSSA.github.io/BioSSA.inst.R")
+source("http://BioSSA.github.io/BioSSA.inst.R", local = new.env())
 {% endhighlight %}
 
 Latest binary build for Windows could be found [here]( http://BioSSA.github.io/BioSSA_0.1.zip "BioSSA Windows binary build").
