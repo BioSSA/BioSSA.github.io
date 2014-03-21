@@ -55,6 +55,9 @@ atx <- 50
 aty <- 50
 tolx <- 5
 toly <- 5
+ylim1 <- c(-10, 10)
+ylim2 <- c(-1, 1)
+ylim3 <- c(-0.2, 0.2)
 
 # Sections for testing the reconstruction quality
 rec <- reconstruct(bss, groups = list(good = 1:good, bad = 1:bad))
@@ -97,8 +100,23 @@ print(pls[[1]], split = c(1, 1, 2, 2), more = TRUE)
 print(pls[[2]], split = c(2, 1, 2, 2), more = TRUE)
 print(pls[[3]], split = c(1, 2, 2, 2), more = TRUE)
 print(pls[[4]], split = c(2, 2, 2, 2))
+
+#dependence of noise on trend
+nm.add <- noise.model(bss, groups = 1:good, model = "additive")
+nm.pois <- noise.model(bss, groups = 1:good, model = "pois")
+nm.mult <- noise.model(bss, groups = 1:good, model = "mult")
+
+p1 <- plot(nm.add, ylim = ylim1, print.alpha = FALSE)
+p2 <- plot(nm.pois, ylim = ylim2, print.alpha = FALSE)
+p3 <- plot(nm.mult, ylim = ylim3, print.alpha = FALSE)
+
+print(p1, split = c(1, 1, 3, 1), more = TRUE);
+print(p2, split = c(2, 1, 3, 1), more = TRUE);
+print(p3, split = c(3, 1, 3, 1));
 {% endhighlight %}
 
 ### Produced output
 ![x-sections](01_x_section.png)
 ![y-sections](01_y_section.png)
+![noise models](01_noise_meas.png)
+
