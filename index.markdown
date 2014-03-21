@@ -40,12 +40,10 @@ processing of data of gene expression of drosophila fly.</p>
 
 The package is implemented as an [R-package](http://www.r-project.org/ ).
 
-To install BioSSA in Linux/MacOS, run following code (in R):
+To install BioSSA automatically (Windows and Linux now supported), run following code (in R):
 
 {% highlight r %}
-install.packages("devtools")
-library(devtools)
-install_github("BioSSA/BioSSA")
+source("http://BioSSA.github.io/BioSSA.inst.R")
 {% endhighlight %}
 
 Binary build for Windows could be found [here]( https://github.com/BioSSA/BioSSA/biossa_01.zip "BioSSA Link").
