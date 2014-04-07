@@ -8,6 +8,8 @@ tags: codeexample
 
 ## Model parameters for noise estimation
 
+<div class="alert alert-success">Theory about noise model used could be found <a href = "{{ site.baseurl}}/noise_theory.html" alt = "Noise Model" class="alert-link">here</a>.</div>
+
 {% highlight r %}
 
 xlim <- c(22, 88)
@@ -42,6 +44,24 @@ summary(nm)
 
 nm <- noise.model(bs, 1:3, model = -1.2)
 summary(nm)
+
+#dependence of noise on trend
+good <- 3
+ylim1 <- c(-10, 10)
+ylim2 <- c(-1, 1)
+ylim3 <- c(-0.2, 0.2)
+
+nm.add <- noise.model(bs, groups = 1:good, model = "additive")
+nm.pois <- noise.model(bs, groups = 1:good, model = "pois")
+nm.mult <- noise.model(bs, groups = 1:good, model = "mult")
+
+p1 <- plot(nm.add, ylim = ylim1, print.alpha = FALSE)
+p2 <- plot(nm.pois, ylim = ylim2, print.alpha = FALSE)
+p3 <- plot(nm.mult, ylim = ylim3, print.alpha = FALSE)
+
+print(p1, split = c(1, 1, 3, 1), more = TRUE);
+print(p2, split = c(2, 1, 3, 1), more = TRUE);
+print(p3, split = c(3, 1, 3, 1));
 
 {% endhighlight %}
 
@@ -83,3 +103,4 @@ Noise model:
 
 {% endhighlight %}
 ![Noise model](03_noisemodel.png)
+![Noise models](01_noise_meas.png)

@@ -8,8 +8,7 @@ tags: codeexample
 
 ## Example of usage of BioSSA & reconstruct functions
 
-- "read.emb.data" reads 2d data from file and return data frame
-- biossa.formula help to choose ; e.g., biossa.formula = mean ~ X + Y ???
+- "read.emb.data" reads 2d data from file and returns data frame
 - "BioSSA" constructs a new BioSSA decomposition object from passed embryo object or formula
 - First argument of "BioSSA" is formula evaluated with using data
 - L is the window length
@@ -26,7 +25,6 @@ L <- c(15, 15)
 file <- system.file("extdata/data", "ab16.txt", package = "BioSSA")
 df <- read.emb.data(file)
 
-bss <- BioSSA(cad ~ AP + DV, data = df, ylim = ylim, xlim = xlim, L = L)
 bss <- BioSSA(cad ~ AP + DV,  data = df,
               L = L,
               step = 0.5,
@@ -113,10 +111,11 @@ p3 <- plot(nm.mult, ylim = ylim3, print.alpha = FALSE)
 print(p1, split = c(1, 1, 3, 1), more = TRUE);
 print(p2, split = c(2, 1, 3, 1), more = TRUE);
 print(p3, split = c(3, 1, 3, 1));
+
 {% endhighlight %}
 
 ### Produced output
 ![x-sections](01_x_section.png)
 ![y-sections](01_y_section.png)
-![noise models](01_noise_meas.png)
+![Noise models](01_noise_meas.png)
 

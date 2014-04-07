@@ -8,12 +8,7 @@ tags: codeexample
 
 ## Figures of reconstruction
 
-- data is the collection of data as a data frame 
-- biossa.formula help to choose ; e.g., biossa.formula = mean ~ X + Y 
-- L is the window length
-- step is the step of interpolation
-- xlim and ylim are ???
-- xperc and yperc are ???
+<div class="alert alert-success">These examples shows various methods of making reconstruction figures.</div>
 
 {% highlight r %}
 
