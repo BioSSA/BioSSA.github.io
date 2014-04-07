@@ -8,7 +8,7 @@ tags: codeexample
 
 ## Model parameters for noise estimation
 
-<div class="alert alert-success">Theory about noise model used could be found <a href = "{{ site.baseurl}}/noise_theory.html" alt = "Noise Model" class="alert-link">here</a>.</div>
+<div class="alert alert-success">Theory about noise model used could be found <a href = "{{ site.baseurl}}/02-noise_theory.html" alt = "Noise Model" class="alert-link">here</a>.</div>
 
 {% highlight r %}
 

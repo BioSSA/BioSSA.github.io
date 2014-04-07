@@ -1,7 +1,7 @@
 ---
 layout: layout-bootstrap-tmp
 title: "Noise Model"
-permalink: noise_theory.html
+permalink: 02-noise_theory.html
 tags: theory
 ---
 
