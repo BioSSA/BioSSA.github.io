@@ -7,7 +7,7 @@ tags: mainpage
 ---
 <div class="jumbotron">
   <div class="container">
-<h1>BioSSA - Tool For Analysis of Gene Expression</h1>
+<h1>BioSSA &mdash; Tool For Analysis of Gene Expression</h1>
 
 <p>Aim of the project is to create the package, which is designed for analysis of 2D data or 3D surface irregular data in cylindrical projection. Interface of the package should be convenient for 
 processing of data of gene expression of drosophila fly.</p>
@@ -18,12 +18,12 @@ processing of data of gene expression of drosophila fly.</p>
 <p><a href="https://github.com/BioSSA/BioSSA" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-save"></span>Watch GitHub Repository</a></p>
 </div>
 </div>
-# Possibilities of the package
+# Package features
 
-1.	Loading the data from files given in the following formats
+1.	Loading data from files given in the following formats
 (x,y, gene expression).
 2.	Decomposition of data
-	-	 Transformation of data to the scale 0-100% by AP and DV coordinates
+	-	Transformation of data to the scale 0-100% by AP and DV coordinates
 	-	Choice of rectangular area for analysis
 	-	Regularization of data (interpolation to regular grid), the step of the grid can be set.
 	-	Decomposition of regularized data by the 2D-SSA method
