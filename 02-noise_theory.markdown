@@ -13,15 +13,16 @@ Generalized multiplicative noise model is considered:
 
 where `\(ξ_i\)` have standard normal distribution.
 
-Value of alpha is estimated as follows:
-logarithms of absolute values of residuals and ofsetted trend are considered,
-then they both ordered by the trend values and averaging prcedure performed.
+The value of `\(\alpha\)` is estimated as follows:
+logarithms of absolute values of residuals and offsetted trend are considered,
+then they both are ordered by the trend values and the averaging procedure is performed.
 There are following averaging methods:
-'none' means nothing averaging,
-'sliding-window' means sliding window averaging (default approach)
-with window length denoted by window argument,
-'equal-break' and 'quantile-break' mean splitting all trend values
+
+1. 'none' means nothing averaging,
+1. 'sliding-window' means averaging by sliding windows (default approach) with window length denoted by window argument,
+1. 'equal-break' and 'quantile-break' means splitting all trend values
 into bins ('quantile-break' means bins with equal quantity of elements in each bin and
 'equal-break' means equal size bins), correspondingly residuals splitting and averaging
-logarithmed residuals and trend values in each bin.
-Then linear regression on averaged logarithms is provided. Slope is alpha esimation and intercept is estimation of logarithm of the standard deviation of relative noise, i.e. `\(\sigma = \exp(Intercept)\)`.
+log-transformed residuals and trend values in each bin.
+
+Then linear regression on averaged logarithms is provided. Slope provides the `\(\alpha\)` esimate and intercept is the estimate of logarithm of the standard deviation of relative noise, i.e. `\(\sigma = \exp(Intercept)\)`.
