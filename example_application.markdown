@@ -41,23 +41,16 @@ Note that the bottom and top edges are coincide, that is, there is no edge effec
 
 ## Construction of noise model
 
-To begin with, we choose parameters for SSA based on 2D-SSA theory and size of embryo. Then we check that the result of reconstruction is adequate. Then `\(\alpha\)` needs to be estimated, and we decide what noise model was used depending on `\(\alpha\)`. It's multiplicative noise model the following example:
+In this section we consider the problem of construction of the noise model, see [Noise Model]( 02-noise_theory.html) for a theory and [Noise estimation example]( 03-example.html) for a code.
+We again investigate data for expression of gene activity measured on the embryo of the drosophila (fruit fly) but the data are 2D. 
 
-{% highlight r %}
+Logic of the investigation is as follows:
 
-xlim <- c(22, 88)
-ylim <- c(32, 68)
-L <- c(15, 15)
+1. To start with, we choose parameters for SSA based on the 2D-SSA theory and sizes of the embryo.
+2. Then we check that the result of reconstruction is adequate by means of 1D profiles.
+3. Then the multiplicity parameter `\(\alpha\)` is estimated and the conclusion based on its value is performed: 0 corresponds to the additive model of noise, 0.5 reflects a Poissonian nature of the noise and 1 corresponds to the multiplicative model.
 
-file <- system.file("extdata/data", "ab16.txt", package = "BioSSA")
-df <- read.emb.data(file)
-
-bs <- BioSSA(cad ~ AP + DV, data = df, ylim = ylim, xlim = xlim, L = L)
-nm <- noise.model(bs, 1:3, averaging.type = "none")
-plot(plot(nm))
-summary(nm)
-
-{% endhighlight %}
+The following example produces the estimate `\(\alpha = 1.236\)`, which shows that the model is rather multiplicative:
 
 {% highlight r %}
 

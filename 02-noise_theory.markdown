@@ -18,9 +18,9 @@ logarithms of absolute values of residuals and offsetted trend are considered,
 then they both are ordered by the trend values and the averaging procedure is performed.
 There are following averaging methods:
 
-1. 'none' means nothing averaging,
-1. 'sliding-window' means averaging by sliding windows (default approach) with window length denoted by window argument,
-1. 'equal-break' and 'quantile-break' means splitting all trend values
+- 'none' means nothing averaging,
+- 'sliding-window' means averaging by sliding windows (default approach) with window length denoted by window argument,
+- 'equal-break' and 'quantile-break' means splitting all trend values
 into bins ('quantile-break' means bins with equal quantity of elements in each bin and
 'equal-break' means equal size bins), correspondingly residuals splitting and averaging
 log-transformed residuals and trend values in each bin.
