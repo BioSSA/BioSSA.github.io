@@ -40,4 +40,31 @@ The components 1-6 grouped together provide an adequate smoothing; the residual 
 Note that the bottom and top edges are coincide, that is, there is no edge effect.
 
 ## Construction of noise model
-TODO
+
+To begin with, we choose parameters for SSA based on 2D-SSA theory and size of embryo. Then we check that the result of reconstruction is adequate. Then `\(\alpha\)` needs to be estimated, and we decide what noise model was used depending on `\(\alpha\)`. It's multiplicative noise model the following example:
+
+{% highlight r %}
+
+xlim <- c(22, 88)
+ylim <- c(32, 68)
+L <- c(15, 15)
+
+file <- system.file("extdata/data", "ab16.txt", package = "BioSSA")
+df <- read.emb.data(file)
+
+bs <- BioSSA(cad ~ AP + DV, data = df, ylim = ylim, xlim = xlim, L = L)
+nm <- noise.model(bs, 1:3, averaging.type = "none")
+plot(plot(nm))
+summary(nm)
+
+{% endhighlight %}
+
+{% highlight r %}
+
+Noise model:
+  Multiplicity: 1.236 
+  sigma: 0.009559 
+  Noise sd: 0.0207 
+{% endhighlight %}
+
+![Noise model](03_noisemodel.png)
