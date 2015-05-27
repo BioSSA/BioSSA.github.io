@@ -6,9 +6,9 @@ permalink: 03-example.html
 tags: codeexample
 ---
 
-## Model parameters for noise estimation
+## Model parameters for a noise estimation
 
-<div class="alert alert-success">Theory about noise model used could be found <a href = "{{ site.baseurl}}/02-noise_theory.html" alt = "Noise Model" class="alert-link">here</a>.</div>
+<div class="alert alert-success">Theory about used noise model can be found <a href = "{{ site.baseurl}}/02-noise_theory.html" alt = "Noise Model" class="alert-link">here</a>.</div>
 
 {% highlight r %}
 
@@ -45,7 +45,7 @@ summary(nm)
 nm <- noise.model(bs, 1:3, model = -1.2)
 summary(nm)
 
-#dependence of noise on trend
+#dependence of a noise on a trend
 good <- 3
 ylim1 <- c(-10, 10)
 ylim2 <- c(-1, 1)
