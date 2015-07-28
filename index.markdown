@@ -40,28 +40,29 @@ processing of data of gene expression of drosophila fly.</p>
 
 The package is implemented as an [R-package](http://www.r-project.org/ ).
 
-To install latest version of BioSSA automatically (Windows and Linux now supported), run following code (in R):
-
-{% highlight r %}
-source("http://BioSSA.github.io/BioSSA.inst.R", local = new.env())
-{% endhighlight %}
-
 Latest binary build for Windows could be found [here]( http://BioSSA.github.io/BioSSA_0.1.zip "BioSSA Windows binary build").
 
 It essentially uses the [Rssa]( http://cran.r-project.org/web/packages/Rssa/ "Rssa link") package.
-You can also watch [Rssa GitHub repository]( https://github.com/asl/rssa/ "Rssa GitHub link") or
-install package from GitHub directly (using Hadley's package [`devtools`]( http://cran.r-project.org/web/packages/devtools/index.html "devtools package CRAN page" ))
+You can also watch [Rssa GitHub repository]( https://github.com/asl/rssa/ "Rssa GitHub link").
+
+Also it uses multidimensional spatial interpolation procedures from our `LinearInterpolator` package, which requires the
+[CGAL]( http://www.cgal.org/ "CGAL official cite") library to be installed. For Windows `CGAL` compilation is rather complicated, so
+it's better to use [precompiled binary] (http://BioSSA.github.io/LinearInterpolator_0.1.zip).
+
+You can install both `LinearInterpolator` and `BioSSA` packages from GitHub directly (using Hadley's package [`devtools`]( http://cran.r-project.org/web/packages/devtools/index.html "devtools package CRAN page" ))
 by the following code:
 {% highlight r %}
 install.packages("devtools")
 library(devtools)
+install_github("BioSSA/LinearInterpolator")
 install_github("BioSSA/BioSSA")
 {% endhighlight %}
 Be careful, `devtools` package has some additional dependences.
 
 # Method
 
-Decomposition of the image into a sum of pattern and noise is fulfilled  by 2D Singular Spectrum Analysis. 
+Decomposition of the image into a sum of pattern and noise is fulfilled
+by Shaped 2D/3D Singular Spectrum Analysis.
 
 #Support
 
