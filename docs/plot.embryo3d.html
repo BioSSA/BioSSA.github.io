@@ -1,15 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Plot 'embryo3d' object</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="R.css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot 'embryo3d' object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
 
-<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/languages/r.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
-<table width="100%" summary="page for plot.embryo3d {BioSSA}"><tr><td>plot.embryo3d {BioSSA}</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for plot.embryo3d {BioSSA}"><tr><td>plot.embryo3d {BioSSA}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>Plot &lsquo;embryo3d&rsquo; object</h2>
 
@@ -23,7 +22,7 @@
 
 <pre>
 ## S3 method for class 'embryo3d'
-plot(x, type = c("hull", "nuclei"), ...)
+plot(x, type = c("hull", "nuclei", "field-section", "nuclei-section"), ...)
 </pre>
 
 
@@ -52,7 +51,7 @@ the color is determined by intensities. At edges the color is obtained by linear
 </p>
 <p>For <code>type = 'nuclei'</code> the nuclei are deposted as color spheres.
 Color is determined by intensities.
-<STRONG>Warning:</STRONG> Drawing can take a long time if the number of nuclei is large.
+<strong>Warning:</strong> Drawing can take a long time if the number of nuclei is large.
 </p>
 <p>Parameter <code>col</code> is vector of two colors corresponding to minimal and maximal intensivities.
 Default value is <code>c('blue', 'red')</code>.
@@ -65,14 +64,12 @@ correspondingly.
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-file &lt;- system.file(&quot;extdata/pce&quot;, &quot;v5_s12166-23au07-22.pce&quot;, package = &quot;BioSSA&quot;)
+<pre><code class="r">file &lt;- system.file(&quot;extdata/pce&quot;, &quot;v5_s12166-23au07-22.pce&quot;, package = &quot;BioSSA&quot;)
 pce &lt;- read.pce.gene(file, gene = &quot;eve&quot;)
 plot(pce, type = &quot;hull&quot;)
 plot(pce, type = &quot;nuclei&quot;)
-
 </code></pre>
 
 
-<hr><div align="center">[Package <em>BioSSA</em> version 0.1 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>BioSSA</em> version 0.1 <a href="00Index.html">Index</a>]</div>
 </body></html>

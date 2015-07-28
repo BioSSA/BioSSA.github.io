@@ -1,21 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Read gene data from PCE file</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="R.css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Read gene data from PCE file</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
 
-<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
-<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/languages/r.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
-<table width="100%" summary="page for pce {BioSSA}"><tr><td>pce {BioSSA}</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for pce {BioSSA}"><tr><td>pce {BioSSA}</td><td style="text-align: right;">R Documentation</td></tr></table>
 
 <h2>Read gene data from PCE file</h2>
 
 <h3>Description</h3>
 
-<p>Read gene expression data from PointCloud File Format
+<p>Read gene expression data from PointCloud File
 </p>
 
 
@@ -33,7 +32,7 @@ extract.gene.pce(pce, gene, measurement = c("default", "apical", "basal", "nucle
 <table summary="R argblock">
 <tr valign="top"><td><code>file</code></td>
 <td>
-<p>charater, PCE file name</p>
+<p>character, PCE file name</p>
 </td></tr>
 <tr valign="top"><td><code>gene</code></td>
 <td>
@@ -49,27 +48,27 @@ extract.gene.pce(pce, gene, measurement = c("default", "apical", "basal", "nucle
 </td></tr>
 <tr valign="top"><td><code>pce</code></td>
 <td>
-<p>data frame, parsed PCE content</p>
+<p>parsed PCE content returned by <code>read.pce</code></p>
 </td></tr>
 </table>
 
 
 <h3>Details</h3>
 
-<p>Some details?..
+<p><code>read.pce.gene</code> is combination of <code>read.pce</code> and <code>extract.gene.pce</code>.
 </p>
 
 
 <h3>Value</h3>
 
 <p>Object of class &lsquo;embryo3d&rsquo; for <code>read.pce.gene</code> and <code>extract.gene.pce</code>.
-Data frame for <code>read.pce</code>.
+Data frame with additional attributes for <code>read.pce</code>.
 </p>
 
 
 <h3>References</h3>
 
-<p>Format description: <a href="http://bdtnp.lbl.gov/Fly-Net/bioimaging.jsp?w=pceFormat">http://bdtnp.lbl.gov/Fly-Net/bioimaging.jsp?w=pceFormat</a>
+<p>PCE format description: <a href="http://bdtnp.lbl.gov/Fly-Net/bioimaging.jsp?w=pceFormat">http://bdtnp.lbl.gov/Fly-Net/bioimaging.jsp?w=pceFormat</a>
 </p>
 
 
@@ -82,14 +81,21 @@ Data frame for <code>read.pce</code>.
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-file &lt;- system.file(&quot;extdata/pce&quot;, &quot;v5_s12166-23au07-22.pce&quot;, package = &quot;BioSSA&quot;)
+<pre><code class="r">file &lt;- system.file(&quot;extdata/pce&quot;, &quot;v5_s12166-23au07-22.pce&quot;, package = &quot;BioSSA&quot;)
 pce &lt;- read.pce.gene(file, gene = &quot;eve&quot;)
 plot(pce, type = &quot;hull&quot;)
-plot(pce, type = &quot;nuclei&quot;)
+</code></pre>
 
+<pre><code>## 
+##      PLEASE NOTE:  As of version 0.3-5, no degenerate (zero area) 
+##      regions are returned with the &quot;Qt&quot; option since the R 
+##      code removes them from the triangulation. 
+##      See help(&quot;delaunayn&quot;).
+</code></pre>
+
+<pre><code class="r">plot(pce, type = &quot;nuclei&quot;)
 </code></pre>
 
 
-<hr><div align="center">[Package <em>BioSSA</em> version 0.1 <a href="00Index.html">Index</a>]</div>
+<hr /><div style="text-align: center;">[Package <em>BioSSA</em> version 0.1 <a href="00Index.html">Index</a>]</div>
 </body></html>
