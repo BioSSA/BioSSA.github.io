@@ -18,6 +18,7 @@ processing of data of gene expression of drosophila fly.</p>
 <p><a href="https://github.com/BioSSA/BioSSA" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-save"></span>Watch GitHub Repository</a></p>
 </div>
 </div>
+
 # Package features
 
 1.	Loading data from files given in the following formats
@@ -64,6 +65,6 @@ Be careful, `devtools` package has some additional dependences.
 Decomposition of the image into a sum of pattern and noise is fulfilled
 by Shaped 2D/3D Singular Spectrum Analysis.
 
-#Support
+# Support
 
 This work is supported by the NG13-083 grant of Dynasty Foundation.
