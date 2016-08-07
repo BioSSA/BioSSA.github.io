@@ -1,6 +1,6 @@
 name: BioSSA
 markdown: kramdown
-highlighter: true
+highlighter: rouge
 permalink: /:title
 baseurl: 
 excerpt_separator: ""
