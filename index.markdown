@@ -41,14 +41,14 @@ processing of data of gene expression of drosophila fly.</p>
 
 The package is implemented as an [R-package](http://www.r-project.org/ ).
 
-Latest binary build for Windows could be found [here]( http://BioSSA.github.io/BioSSA_0.1.zip "BioSSA Windows binary build").
+Latest binary build for Windows could be found [here]( http://BioSSA.github.io/BioSSA_0.2.zip "BioSSA Windows binary build").
 
 It essentially uses the [Rssa]( http://cran.r-project.org/web/packages/Rssa/ "Rssa link") package.
 You can also watch [Rssa GitHub repository]( https://github.com/asl/rssa/ "Rssa GitHub link").
 
 Also it uses multidimensional spatial interpolation procedures from our `LinearInterpolator` package, which requires the
 [CGAL]( http://www.cgal.org/ "CGAL official cite") library to be installed. For Windows `CGAL` compilation is rather complicated, so
-it's better to use [precompiled binary] (http://BioSSA.github.io/LinearInterpolator_0.1.zip).
+it's better to use [precompiled binary] (http://BioSSA.github.io/LinearInterpolator_0.1.zip "LinearInterpolator v0.1").
 
 You can install both `LinearInterpolator` and `BioSSA` packages from GitHub directly (using Hadley's package [`devtools`]( http://cran.r-project.org/web/packages/devtools/index.html "devtools package CRAN page" ))
 by the following code:
