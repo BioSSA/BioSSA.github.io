@@ -48,7 +48,7 @@ You can also watch [Rssa GitHub repository]( https://github.com/asl/rssa/ "Rssa 
 
 Also it uses multidimensional spatial interpolation procedures from our `LinearInterpolator` package, which requires the
 [CGAL]( http://www.cgal.org/ "CGAL official cite") library to be installed. For Windows `CGAL` compilation is rather complicated, so
-it's better to use [precompiled binary] (http://BioSSA.github.io/LinearInterpolator_0.1.zip "LinearInterpolator v0.1").
+it's better to use [precompiled binary] ( http://BioSSA.github.io/LinearInterpolator_0.1.zip "LinearInterpolator v0.1").
 
 You can install both `LinearInterpolator` and `BioSSA` packages from GitHub directly (using Hadley's package [`devtools`]( http://cran.r-project.org/web/packages/devtools/index.html "devtools package CRAN page" ))
 by the following code:
