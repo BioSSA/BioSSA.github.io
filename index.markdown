@@ -68,3 +68,5 @@ by Shaped 2D/3D Singular Spectrum Analysis.
 # Support
 
 This work is supported by the NG13-083 grant of Dynasty Foundation.
+
+This work is supported by the RFBR grant 16-04-00821.
