@@ -12,8 +12,8 @@ tags: mainmenu
 
 1. Nina Golyandina, PhD in Mathematics, Associate Professor, Chair of Statistical Modelling, St.Petersburg State University
 
-1. Alex Shlemov, PhD student, Assistant Professor,  Chair of Statistical Modelling, St.Petersburg State University
+1. Alex Shlemov, Junior Research Fellow,  Center for Algorithmic Biotechnology, St.Petersburg State University
 
 1. Anton Korobeynikov, PhD in Mathematics, Associate Professor, Chair of Statistical Modelling, St.Petersburg State University
 
-1. Nikita Zvonarev, student, Chair of Statistical Modelling, St.Petersburg State University
+1. Nikita Zvonarev, PhD student, Chair of Statistical Modelling, St.Petersburg State University
