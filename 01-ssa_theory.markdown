@@ -8,8 +8,8 @@ tags: theory
 #  Singular Spectrum Analysis
 <div class="alert alert-success">
     The theory and algorithms of SSA and its extensions, which are used in BioSSA, can be found in the following papers supported by the NG13-083 grant of Dynasty Foundation:<br/>
-    N. Golyandina, A. Korobeynikov, A. Shlemov, K. Usevich. <a href = "http://arxiv.org/pdf/1309.5050.pdf" class="alert-link">Multivariate and 2D Extensions of Singular Spectrum Analysis with the Rssa Package.</a> Submitted to Journal of Statistical Software. <br/>
-    A. Shlemov, N. Golyandina. <a href = "http://arxiv.org/pdf/1401.4980.pdf" class="alert-link">Shaped extensions of singular spectrum analysis.</a> Accepted by <a href = "http://fwn06.housing.rug.nl/mtns2014/" class="alert-link">The 21st International Symposium on Mathematical Theory of Networks and Systems.</a>
+    -   N. Golyandina, A. Korobeynikov, A. Shlemov, K. Usevich. <a href = "http://arxiv.org/pdf/1309.5050.pdf" class="alert-link">Multivariate and 2D Extensions of Singular Spectrum Analysis with the Rssa Package.</a> Journal of Statistical Software, 67(2):1--78, 2015
+    -   A. Shlemov, N. Golyandina. <a href = "http://arxiv.org/pdf/1401.4980.pdf" class="alert-link">Shaped extensions of singular spectrum analysis.</a> In proceedings of <a href = "http://fwn06.housing.rug.nl/mtns2014/" class="alert-link">The 21st International Symposium on Mathematical Theory of Networks and Systems,</a> July 7--11, 2014. Groningen, The Netherlands, pages 1813--1820, 2014.
 </div>
 Singular spectrum analysis as a method of time series analysis has
 well-elaborated theory and solves various problems: time series decomposition,
