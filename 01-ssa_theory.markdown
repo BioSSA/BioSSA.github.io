@@ -10,7 +10,7 @@ tags: theory
     The theory and algorithms of SSA and its extensions, which are used in BioSSA, can be found in the following papers supported by the NG13-083 grant of Dynasty Foundation:
     <ul>
     <li> N. Golyandina, A. Korobeynikov, A. Shlemov, K. Usevich. <a href = "http://arxiv.org/pdf/1309.5050.pdf" class="alert-link">Multivariate and 2D Extensions of Singular Spectrum Analysis with the Rssa Package.</a> Journal of Statistical Software, 67(2):1&ndash;78, 2015</li>
-    <li> A. Shlemov, N. Golyandina. <a href = "http://arxiv.org/pdf/1401.4980.pdf" class="alert-link">Shaped extensions of singular spectrum analysis.</a> In proceedings of <a href = "http://fwn06.housing.rug.nl/mtns2014/" class="alert-link">The 21st International Symposium on Mathematical Theory of Networks and Systems,</a> July 7&ndash;11, 2014. Groningen, The Netherlands, pages 1813--1820, 2014</li>
+    <li> A. Shlemov, N. Golyandina. <a href = "http://arxiv.org/pdf/1401.4980.pdf" class="alert-link">Shaped extensions of singular spectrum analysis.</a> In proceedings of <a href = "http://fwn06.housing.rug.nl/mtns2014/" class="alert-link">The 21st International Symposium on Mathematical Theory of Networks and Systems,</a> July 7&ndash;11, 2014. Groningen, The Netherlands, pages 1813&ndash;1820, 2014</li>
     </ul>
 </div>
 Singular spectrum analysis as a method of time series analysis has
