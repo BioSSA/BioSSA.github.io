@@ -24,7 +24,7 @@ processing of data of gene expression of drosophila fly.</p>
 1.	Loading data from files given in the following formats
 (x,y, gene expression).
 2.	Decomposition of data
-	-	Transformation of data to the scale 0-100% by AP and DV coordinates
+	-	Transformation of data to the scale 0&ndash;100% by AP and DV coordinates
 	-	Choice of rectangular area for analysis
 	-	Regularization of data (interpolation to regular grid), the step of the grid can be set.
 	-	Decomposition of regularized data by the 2D-SSA method
