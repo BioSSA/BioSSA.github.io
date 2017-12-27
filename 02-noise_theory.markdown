@@ -36,4 +36,4 @@ log-transformed residuals and trend values in each bin.
 
 Then linear regression on averaged logarithms is provided. Slope provides an
 `\(\alpha\)` esimate and correted (on the non-zero expectation of logarithmed absolute value of standard normal variate) intercept is an estimate of logarithm of the standard
-deviation of relative noise, i.e. `\(\hat{\sigma} = \exp(Intercept - \mathop{\mathbb{E}}(\xi))\)`.
+deviation of relative noise, i.e. `\(\hat{\sigma} = \exp(Intercept - \mathop{\mathbb{E}}(\log{|\xi|}))\)`.
