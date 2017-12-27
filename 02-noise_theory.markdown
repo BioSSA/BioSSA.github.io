@@ -7,7 +7,10 @@ tags: theory
 
 # Model application
 <div class="alert alert-success">
-    The suggested model is introduced and applied in the following papers supported by NG13-083 Grant of Dynasty Foundation, US NIH Grant R01-GM072022, and The Russian Foundation for Basic Research Grant 13-04-02137
+    The suggested model is introduced and applied in the following papers
+    supported by NG13-083 Grant of Dynasty Foundation, US NIH Grant
+    R01-GM072022, and The Russian Foundation for Basic Research Grants
+    13-04-02137 and 15-04-06480.
     <ul>
     <li> A. Shlemov, N. Golyandina, D. Holloway, A. Spirov. <a href = "https://www.hindawi.com/journals/bmri/2015/689745/" class="alert-link">
     Shaped Singular Spectrum Analysis for quantifying gene expression, with application to the early <i>Drosophila</i> embryo.</a> <i>BioMed Research International,</i> vol. 2015, Article ID 689745, 14 pages, 2015</li>
