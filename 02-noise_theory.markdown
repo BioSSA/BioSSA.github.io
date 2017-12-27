@@ -11,7 +11,7 @@ tags: theory
     <ul>
     <li> A. Shlemov, N. Golyandina, D. Holloway, A. Spirov. <a href = "https://www.hindawi.com/journals/bmri/2015/689745/" class="alert-link">
     Shaped Singular Spectrum Analysis for quantifying gene expression, with application to the early <i>Drosophila</i> embryo.</a> <i>BioMed Research International,</i> vol. 2015, Article ID 689745, 14 pages, 2015</li>
-    <li> A. Shlemov, N. Golyandina, D. Holloway, A. Spirov.<a href = "https://www.hindawi.com/journals/bmri/2015/986436/" class="alert-link">Shaped 3D Singular Spectrum Analysis for Quantifying Gene Expression, with Application to the Early <i>Zebrafish</i> Embryo.</a> <i>BioMed Research International,</i> vol. 2015, Article ID 986436, 18 pages, 2015</li>
+    <li> A. Shlemov, N. Golyandina, D. Holloway, A. Spirov. <a href = "https://www.hindawi.com/journals/bmri/2015/986436/" class="alert-link">Shaped 3D Singular Spectrum Analysis for Quantifying Gene Expression, with Application to the Early <i>Zebrafish</i> Embryo.</a> <i>BioMed Research International,</i> vol. 2015, Article ID 986436, 18 pages, 2015</li>
     </ul>
 </div>
 #  Noise model description
