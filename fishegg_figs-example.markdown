@@ -111,6 +111,6 @@ make.gl("scheme/rec_orig_ssp.png", plot.em(rec, type = "nuclei", size = ball.siz
 ![3d-figure-1a](scheme/original_ssp.png)
 ![3d-figure-2a](scheme/equalized.png)
 ![3d-figure-2b](scheme/flattened.png)
-![3d-figure-2c](scheme/regular.pgn)
+![3d-figure-2c](scheme/regular.png)
 ![3d-figure-2d](scheme/rec_reg.png)
 ![3d-figure-1b](scheme/rec_orig_ssp.png)
