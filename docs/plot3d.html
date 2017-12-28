@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Plot 3d data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head><body>
+
+<table width="100%" summary="page for plot3d {BioSSA}"><tr><td>plot3d {BioSSA}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Plot 3d data</h2>
+
+<h3>Description</h3>
+
+<p>Plot 3d data
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">df &lt;- read.csv(fpath &lt;- system.file(&quot;extdata/fly3d/MatchIT&quot;, &quot;gsc_ntla_wt_t008_ch01.csv&quot;, package=&quot;BioSSA&quot;), sep = &quot;;&quot;, header = FALSE)
+names(df) &lt;- c(&quot;cell.global.id&quot;, &quot;expression.data&quot;, &quot;time.stage&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;, &quot;trash1&quot;, &quot;trash2&quot;)
+df$trash1 &lt;- df$trash2 &lt;- NULL
+
+df$value &lt;- df$expression.data
+
+df$x &lt;- -df$x
+df$y &lt;- -df$y
+df$z &lt;- -df$z
+
+mask &lt;- TRUE
+N &lt;- length(df$value)
+
+signal &lt;- 2*exp((df$x-500) / 200) + 3*exp((500-df$x)/600)
+
+cuts &lt;- 15
+sigma &lt;- 2.5
+set.seed(1)
+df$value[mask] &lt;- signal + rnorm(N, sd = sigma)
+
+ss &lt;- BioSSA3d(value ~ x + y + z, data = df,
+               cuts = cuts,
+               kind = &quot;sphere&quot;,
+               alpha.impute = 5000,
+               circular = FALSE,
+               L = c(1, 1, 1), rel.window = FALSE)
+</code></pre>
+
+<pre><code>## [1] &quot;Interpolated&quot;
+## [1] &quot;Interpolated&quot;
+## [1] &quot;Interpolated&quot;
+</code></pre>
+
+<pre><code class="r">em &lt;- ss$emb3
+
+
+
+dir.create(&quot;scheme&quot;, showWarnings = FALSE)
+
+col3d &lt;- rev(rainbow(100, start = 1, end = 0.6))
+
+plot.bb(em, &quot;rotated&quot;)
+plot.bb(em, &quot;equalized&quot;)
+
+alpha.quantile &lt;- 0.02
+scale.range &lt;- quantile(c(em$values, em$field$f),
+                        probs = c(alpha.quantile/2, 1-alpha.quantile/2),
+                        na.rm = TRUE)
+
+ball.size &lt;- 1
+ball.size.sp &lt;- 1.25
+ball.size.ssp &lt;- 1.25
+
+lit.sp &lt;- TRUE  # Use &#39;FALSE&#39; to disable light effects
+
+
+make.gl(&quot;scheme/original.png&quot;, plot(em, type = &quot;nuclei&quot;, size = ball.size, col = col3d,
+                                    scale.range = scale.range,
+                                    xlim = range(em$x3d),
+                                    ylim = range(em$y3d),
+                                    zlim = range(em$z3d)))
+</code></pre>
+
+<pre><code>## [1] &quot;3d Plotting scheme/original.png .......&quot;
+## [1] &quot;3d Plotted scheme/original.png&quot;
+</code></pre>
+
+<pre><code class="r">zoom.big &lt;- 0.835
+make.gl(&quot;scheme/original_sp.png&quot;, plot.em(em, type = &quot;nuclei&quot;, size = ball.size.sp, col = col3d,
+                                          scale.range = scale.range, cos.trashold = -1, lit = lit.sp),
+        zoom = zoom.big, lit = lit.sp)
+</code></pre>
+
+<pre><code>## [1] &quot;3d Plotting scheme/original_sp.png .......&quot;
+## [1] &quot;3d Plotted scheme/original_sp.png&quot;
+</code></pre>
+
+<pre><code class="r">make.gl(&quot;scheme/original_ssp.png&quot;, plot.em(em, type = &quot;nuclei&quot;, size = ball.size.ssp, col = col3d,
+                                           scale.range = scale.range, cos.trashold = 0, lit = lit.sp),
+        lit = lit.sp,
+        zoom = zoom.big)
+</code></pre>
+
+<pre><code>## [1] &quot;3d Plotting scheme/original_ssp.png .......&quot;
+## [1] &quot;3d Plotted scheme/original_ssp.png&quot;
+</code></pre>
+
+<pre><code class="r">rot &lt;- attr(em, &quot;rotated&quot;)
+rot.em &lt;- em
+rot.em$x3d &lt;- rot[, 1]
+rot.em$y3d &lt;- rot[, 2]
+rot.em$z3d &lt;- rot[, 3]
+
+make.gl(&quot;scheme/rotated.png&quot;, plot(rot.em, type = &quot;nuclei&quot;, size = ball.size, col = col3d,
+                                   scale.range = scale.range))
+</code></pre>
+
+<pre><code>## [1] &quot;3d Plotting scheme/rotated.png .......&quot;
+## [1] &quot;3d Plotted scheme/rotated.png&quot;
+</code></pre>
+
+<pre><code class="r">eqv &lt;- attr(attr(em, &quot;unfolded&quot;), &quot;X.eq&quot;)
+eqv.em &lt;- em
+eqv.em$x3d &lt;- eqv[, 1]
+eqv.em$y3d &lt;- eqv[, 2]
+eqv.em$z3d &lt;- eqv[, 3]
+
+make.gl(&quot;scheme/equalized.png&quot;, plot(eqv.em, type = &quot;nuclei&quot;, size = ball.size, col = col3d,
+                                        scale.range = scale.range))
+</code></pre>
+
+<pre><code>## [1] &quot;3d Plotting scheme/equalized.png .......&quot;
+## [1] &quot;3d Plotted scheme/equalized.png&quot;
+</code></pre>
+
+<pre><code class="r">make.gl(&quot;scheme/flattened.png&quot;, .plot.embryo3d.nuclei.flattened(em, size = ball.size, col = col3d,
+                                                                scale.range = scale.range))
+</code></pre>
+
+<pre><code>## [1] &quot;3d Plotting scheme/flattened.png .......&quot;
+## [1] &quot;3d Plotted scheme/flattened.png&quot;
+</code></pre>
+
+<pre><code class="r">make.gl(&quot;scheme/regular.png&quot;, .plot.embryo3d.nuclei.flattened(field2emb(em), size = ball.size, col = col3d,
+                                                              scale.range = scale.range))
+</code></pre>
+
+<pre><code>## [1] &quot;3d Plotting scheme/regular.png .......&quot;
+## [1] &quot;3d Plotted scheme/regular.png&quot;
+</code></pre>
+
+<pre><code class="r">L &lt;- 0.4
+ss &lt;- BioSSA3d(em, L = L, rel.window = TRUE, elliptical = TRUE, neig = 10)
+</code></pre>
+
+<pre><code>## Warning in eval(.init.fragment(this)): Some field elements were not covered
+## by shaped window. 183 elements will be ommited
+</code></pre>
+
+<pre><code class="r">rec &lt;- reconstruct(ss, list(1:2))$F1
+
+frec &lt;- field2emb(rec)
+.plot.embryo3d.nuclei.flattened(field2emb(em), size = ball.size, col = col3d,
+                                scale.range = scale.range)
+
+bbox &lt;- par3d()$bbox
+make.gl(&quot;scheme/rec_reg.png&quot;, .plot.embryo3d.nuclei.flattened(frec, size = ball.size, col = col3d,
+                                                              scale.range = scale.range,
+                                                              xlim = bbox[1:2],
+                                                              ylim = bbox[3:4],
+                                                              zlim = bbox[5:6]))
+</code></pre>
+
+<pre><code>## [1] &quot;3d Plotting scheme/rec_reg.png .......&quot;
+## [1] &quot;3d Plotted scheme/rec_reg.png&quot;
+</code></pre>
+
+<pre><code class="r">make.gl(&quot;scheme/rec_orig.png&quot;, plot(rec, type = &quot;nuclei&quot;, size = ball.size, col = col3d,
+                                    scale.range = scale.range,
+                                    xlim = range(em$x3d),
+                                    ylim = range(em$y3d),
+                                    zlim = range(em$z3d)))
+</code></pre>
+
+<pre><code>## [1] &quot;3d Plotting scheme/rec_orig.png .......&quot;
+## [1] &quot;3d Plotted scheme/rec_orig.png&quot;
+</code></pre>
+
+<pre><code class="r">make.gl(&quot;scheme/rec_orig_sp.png&quot;, plot.em(rec, type = &quot;nuclei&quot;, size = ball.size.sp, col = col3d,
+                                          scale.range = scale.range, cos.trashold = -1, lit = lit.sp),
+        lit = lit.sp,
+        zoom = zoom.big)
+</code></pre>
+
+<pre><code>## [1] &quot;3d Plotting scheme/rec_orig_sp.png .......&quot;
+## [1] &quot;3d Plotted scheme/rec_orig_sp.png&quot;
+</code></pre>
+
+<pre><code class="r">make.gl(&quot;scheme/rec_orig_ssp.png&quot;, plot.em(rec, type = &quot;nuclei&quot;, size = ball.size.ssp, col = col3d,
+                                           scale.range = scale.range, cos.trashold = 0, lit = lit.sp),
+        lit = lit.sp,
+        zoom = zoom.big)
+</code></pre>
+
+<pre><code>## [1] &quot;3d Plotting scheme/rec_orig_ssp.png .......&quot;
+## [1] &quot;3d Plotted scheme/rec_orig_ssp.png&quot;
+</code></pre>
+
+
+<hr /><div style="text-align: center;">[Package <em>BioSSA</em> version 0.2 <a href="00Index.html">Index</a>]</div>
+</body></html>
